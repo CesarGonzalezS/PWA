@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gestión de Usuarios</h1>
+
+    <!-- Formulario para crear un usuario -->
+    <div class="form-container">
+        <h2>Agregar Usuario</h2>
+        <form id="createUserForm">
+            <label for="name">Nombre:</label><br>
+            <input type="text" id="name" required><br><br>
+
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" required><br><br>
+
+            <label for="age">Edad:</label><br>
+            <input type="number" id="age" required><br><br>
+
+            <button type="submit">Agregar Usuario</button>
+        </form>
+    </div>
+
+    <!-- Lista de usuarios -->
+    <h2>Usuarios</h2>
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Edad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <!-- Formulario para editar un usuario -->
+    <div class="form-container" id="editUserContainer" style="display: none;">
+        <h2>Editar Usuario</h2>
+        <form id="editUserForm">
+            <input type="hidden" id="editUserId">
+            <label for="editName">Nombre:</label><br>
+            <input type="text" id="editName" required><br><br>
+
+            <label for="editEmail">Correo electrónico:</label><br>
+            <input type="email" id="editEmail" required><br><br>
+
+            <label for="editAge">Edad:</label><br>
+            <input type="number" id="editAge" required><br><br>
+
+            <button type="submit">Actualizar Usuario</button>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

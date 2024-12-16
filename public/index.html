@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pouchdb/7.0.0/pouchdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body { padding: 20px; }
+        #userForm, #editForm { display: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Gestión de Usuarios</h1>
+        <button id="addUserBtn" class="btn btn-primary mb-4">Agregar Usuario</button>
+
+        <!-- Formulario para agregar un nuevo usuario -->
+        <div id="userForm" class="card p-3">
+            <h3>Agregar Usuario</h3>
+            <form id="form">
+                <div class="mb-3">
+                    <input type="text" id="userName" class="form-control" placeholder="Nombre del Usuario" required />
+                </div>
+                <div class="mb-3">
+                    <input type="email" id="userEmail" class="form-control" placeholder="Correo Electrónico" required />
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="userPass" class="form-control" placeholder="Contraseña" required />
+                </div>
+                <button type="button" class="btn btn-success" onclick="addUser()">Guardar</button>
+                <button type="button" class="btn btn-secondary" onclick="resetForm()">Cancelar</button>
+            </form>
+        </div>
+
+        <!-- Formulario para editar un usuario -->
+        <div id="editForm" class="card p-3">
+            <h3>Editar Usuario</h3>
+            <form id="editFormContent">
+                <div class="mb-3">
+                    <input type="text" id="editUserName" class="form-control" placeholder="Nombre del Usuario" required />
+                </div>
+                <button type="submit" class="btn btn-warning">Actualizar</button>
+                <button type="button" class="btn btn-secondary" onclick="resetForm()">Cancelar</button>
+            </form>
+        </div>
+
+        <!-- Lista de usuarios -->
+        <div id="userList" class="list-group">
+            <!-- Aquí se mostrarán los usuarios -->
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
